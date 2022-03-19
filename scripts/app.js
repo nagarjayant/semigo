@@ -1,4 +1,5 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbwlzt-vqfCzkI7AWmvx-7ZgEA7dsymwMRkGoomfNHwTHUHDUpDwSU1s6WzHR2zuZ6di/exec";
+//v1
+
 const $form = $("#seminarForm");
 var webinarName = "";
 var date = "";
@@ -22,10 +23,25 @@ $(document).ready(function () {
   });
 });
 
+//sscroll
+$(document).on("click", ".sscroll", function (event) {
+  if (this.hash !== "") {
+    event.preventDefault();
+    var hash = this.hash;
+    $("html, body").animate(
+      {
+        scrollTop: $(hash).offset().top - 150,
+      },
+      800,
+      function () {},
+    );
+  }
+});
+
 //form
 $(document).ready(function () {
   //upload form open
-  $(".formOpen").on("click", function () {
+  $(document).on("click", ".formOpen", function () {
     webinarName = $(this).parent().parent().find(".semName").text();
     $("#MainBody").addClass("is-not-scrollable");
     $(".formOverlay").removeClass("formFade");
@@ -35,7 +51,7 @@ $(document).ready(function () {
   });
 
   //upload form close
-  $("#formClose").click(function () {
+  $(document).on("click", "#formClose", function () {
     $("#MainBody").removeClass("is-not-scrollable");
     $(".formOverlay").addClass("formFade");
     $(".formContainer").addClass("formFade");
@@ -180,16 +196,3 @@ $(document).ready(function () {
     }
   });
 });
-
-//submit form
-/* form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-      $("#MainBody").removeClass("is-not-scrollable");
-      $(".formOverlay").addClass("formFade");
-      $(".formContainer").addClass("formFade");
-      $(".formMainBox").removeClass("formActive");
-    })
-    .catch((error) => console.error("Error!", error.message));
-}); */

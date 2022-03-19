@@ -1,3 +1,7 @@
+/*
+v1
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 /* ------------------------------------------------------------ *\
@@ -409,7 +413,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .heroSection::after {
@@ -432,6 +437,22 @@ header {
   font-size: 5em;
   color: #fff;
   font-weight: 700;
+}
+
+.button-area {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.heroBtn {
+  background: #86c0d1;
+  color: #081c37;
+}
+
+.heroBtn::hover {
+  background: #081c37;
+  color: #86c0d1;
 }
 
 /* ------------------------------------------------------------ *\
@@ -572,7 +593,13 @@ header {
   height: 200px;
 }
 
-.web1img {
+.semImage img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* .web1img {
   background: url("../images/webinar/SEO.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -591,7 +618,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
 .semInfo {
   width: 100%;
@@ -1126,7 +1153,7 @@ input[type="date"]::-webkit-inner-spin-button {
   float: left;
   position: relative;
   padding: 50px 0;
-  background: #191919;
+  background: #081c37;
 }
 
 .aboutUs h1 {
